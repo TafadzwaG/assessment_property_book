@@ -37,7 +37,10 @@
         @include('sections._prices')
     </div>
 
+    
+
     <div class="footer_section" id="footer_section">
         @include('sections._footer')
     </div>
+
 @endsection

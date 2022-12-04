@@ -5,9 +5,21 @@
 
              @if ($story->count() > 0)
 
+
+
                  @foreach ($story as $stry)
                      <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
-                         <img src="{{ $stry->story_photos[0]->path }}" class="img-fluid" alt="">
+                         <div class="owl-carousel owl-theme">
+                             @foreach ($stry->story_photos as $photo)
+                                 <div class="item">
+                                     <img src="{{ $photo->path }}" class="img-fluid" alt="">
+                                 </div>
+                             @endforeach
+
+
+                         </div>
+
+
 
                      </div>
 
@@ -18,47 +30,36 @@
 
 
                          <h3> {{ $stry->story_title }} </h3>
-                         <div class="">
-                             <div class="card">
-                                 <div class="card-header">
-                                     <ul class="nav nav-tabs justify-content-center" role="tablist">
-                                         <li class="nav-item">
-                                             <a class="nav-link active" data-toggle="tab" href="#home" role="tab">
-                                                 <i class="now-ui-icons objects_umbrella-13"></i> Who We Are
-                                             </a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" data-toggle="tab" href="#profile" role="tab">
-                                                 <i class="now-ui-icons shopping_cart-simple"></i> Our Vision
-                                             </a>
-                                         </li>
-                                         <li class="nav-item">
-                                             <a class="nav-link" data-toggle="tab" href="#messages" role="tab">
-                                                 <i class="now-ui-icons shopping_shop"></i> Our History
-                                             </a>
-                                         </li>
+                         <div class="pt-4">
+                             <div class="tab-switcher">
 
-                                     </ul>
-                                 </div>
-                                 <div class="card-body">
-                                     <!-- Tab panes -->
-                                     <div class="tab-content text-center">
-                                         <div class="tab-pane active" id="home" role="tabpanel">
-                                             <p>
-                                                 {{ $stry->who_we_are }}
-                                             </p>
 
-                                         </div>
-                                         <div class="tab-pane" id="profile" role="tabpanel">
-                                             <p> {{ $stry->vision }} </p>
-                                         </div>
-                                         <div class="tab-pane" id="messages" role="tabpanel">
-                                             <p>{{ $stry->history }}</p>
-                                         </div>
-
+                                 <ul>
+                                     <li class="tab-item active" target-wrapper="first-dynamic-table" target-tab="home">
+                                         Who We Are</li>
+                                     <li class="tab-item" target-wrapper="first-dynamic-table" target-tab="about">
+                                        Our Vision
+                                     </li>
+                                     <li class="tab-item" target-wrapper="first-dynamic-table" target-tab="faqs">
+                                        Our History
+                                     </li>
+                                     
+                                 </ul>
+                                 <div id="first-dynamic-table">
+                                     <div class="tab-content active" id="home">
+                                         <p>{{$stry->who_we_are }}</p>
                                      </div>
+                                     <div class="tab-content" id="about">
+                                         <p>{{ $stry->vision }}</p>
+                                     </div>
+                                     <div class="tab-content" id="faqs">
+                                         <p>{{ $stry->history }}</p>
+                                     </div>
+                                    
                                  </div>
                              </div>
+
+
                          </div>
 
 

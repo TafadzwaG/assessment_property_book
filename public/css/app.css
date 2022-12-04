@@ -1013,6 +1013,8 @@ section {
     transition: all ease-in-out 0.4s;
     background: #fff;
     min-width: 309px;
+    min-height: 309px;
+    max-height: 309px;
 }
 
 .services .icon-box .icon {

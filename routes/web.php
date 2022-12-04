@@ -20,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', [HomeController::class, 'index']);
 
+Route::get('/one-admin', function(){
+    return view('one-ui-admin.layouts.dashboard');
+});
+
+

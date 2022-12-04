@@ -1,24 +1,32 @@
 @if ($footer_content->count() > 0)
     <section class="my-footer">
-        @foreach ($footer_content as $footer)
-            <div class="container">
-                <div class="container-footer">
-                    <h2 class="text-center"> {{ $footer->title }}</h1>
+        <div class="owl-carousel owl-theme ">
+            @foreach ($footer_content as $footer)
+            <div class="item">
+                <div class="container">
+                    <div class="container-footer">
+                        <h2 class="text-center"> {{ $footer->title }}</h1>
+
+                    </div>
+                    <div class="para-container">
+                        <p class="card-text text-center">
+                            {{ $footer->description }}
+                        </p>
+                    </div>
+
+
+                    <div class="button-container">
+                        <a href="#" class="btn-get-started scrollto">Get Started</a>
+                    </div>
 
                 </div>
-                <div class="para-container">
-                    <p class="card-text text-center">
-                        {{ $footer->description }}
-                    </p>
-                </div>
-
-
-                <div class="button-container">
-                    <a href="#" class="btn-get-started scrollto">Get Started</a>
-                </div>
-
             </div>
-        @endforeach
+                
+            @endforeach
+        </div>
+
+
+
 
     </section>
 @else

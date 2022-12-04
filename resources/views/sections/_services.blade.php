@@ -21,7 +21,10 @@
                                  </div>
                              </div>
                              <h4><a href="">{{ $service->title }}</a></h4>
-                             <p>{{ $service->description }}</p>
+                             <div style="height: 100px; overflow:hidden; text-align:left">
+                             <p > {{ $service->description }}</p>
+                                
+                             </div>
                          </div>
                      </div>
                  @endforeach
