@@ -14,7 +14,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        //
+        $services = Service::get();
+
+        return $services;
     }
 
     /**
@@ -35,7 +37,22 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $service_data = $request->validate([
+            'title' => 'required|string',
+            'description' => 'required|string',
+            'icon' => 'nullable|image:png:jpeg:jpg:gif'
+
+        ]);
+
+        if ($request->has('icon')) {
+            $imageName = time() . "update_image" . "." . $request->photo->getClientOriginalExtension();
+            $request->image->move(public_path('images'), $imageName);
+            $data["image"] = $imageName;
+        }
+
+        $service = Service::create($service_data);
+
+        return new Service($service);
     }
 
     /**
@@ -46,7 +63,7 @@ class ServiceController extends Controller
      */
     public function show(Service $service)
     {
-        //
+        return $service;
     }
 
     /**

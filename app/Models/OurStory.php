@@ -9,6 +9,9 @@ class OurStory extends Model
 {
     use HasFactory;
 
+    
+    protected $table = 'our_stories';
+
     protected $fillabe = [
         'story_title',
         'who_we_are',

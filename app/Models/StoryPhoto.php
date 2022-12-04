@@ -9,6 +9,8 @@ class StoryPhoto extends Model
 {
     use HasFactory;
 
+    protected $table = 'story_photos';
+
     protected $fillable = [
         'title',
         'path',

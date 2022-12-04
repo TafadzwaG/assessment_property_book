@@ -14,7 +14,9 @@ class HomeBannerController extends Controller
      */
     public function index()
     {
-        //
+
+        
+
     }
 
     /**

@@ -9,6 +9,8 @@ class HomeBanner extends Model
 {
     use HasFactory;
 
+    protected $table = 'home_banners';
+
     protected $fillabe = [
         'title',
         'description'

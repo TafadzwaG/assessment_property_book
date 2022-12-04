@@ -14,7 +14,9 @@ class BannerVedioController extends Controller
      */
     public function index()
     {
-        //
+        $bannerVedio = BannerVedio::get();
+
+        return  $bannerVedio;
     }
 
     /**
