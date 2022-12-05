@@ -10,11 +10,19 @@
                  @foreach ($story as $stry)
                      <div class="col-lg-6 d-flex align-items-center" data-aos="fade-right" data-aos-delay="100">
                          <div class="owl-carousel owl-theme">
-                             @foreach ($stry->story_photos as $photo)
+                             @if ($stry->story_photos->count() > 0)
+                                 @foreach ($stry->story_photos as $photo)
+                                     <div class="item">
+                                         <img src="{{ $photo->path }}" class="img-fluid" alt="">
+                                     </div>
+                                 @endforeach
+                             @else
                                  <div class="item">
-                                     <img src="{{ $photo->path }}" class="img-fluid" alt="">
+                                     <img src="{{ asset('file-image/3.jpg') }}" class="img-fluid" alt="">
                                  </div>
-                             @endforeach
+                             @endif
+
+
 
 
                          </div>
@@ -38,16 +46,16 @@
                                      <li class="tab-item active" target-wrapper="first-dynamic-table" target-tab="home">
                                          Who We Are</li>
                                      <li class="tab-item" target-wrapper="first-dynamic-table" target-tab="about">
-                                        Our Vision
+                                         Our Vision
                                      </li>
                                      <li class="tab-item" target-wrapper="first-dynamic-table" target-tab="faqs">
-                                        Our History
+                                         Our History
                                      </li>
-                                     
+
                                  </ul>
                                  <div id="first-dynamic-table">
                                      <div class="tab-content active" id="home">
-                                         <p>{{$stry->who_we_are }}</p>
+                                         <p>{{ $stry->who_we_are }}</p>
                                      </div>
                                      <div class="tab-content" id="about">
                                          <p>{{ $stry->vision }}</p>
@@ -55,7 +63,7 @@
                                      <div class="tab-content" id="faqs">
                                          <p>{{ $stry->history }}</p>
                                      </div>
-                                    
+
                                  </div>
                              </div>
 

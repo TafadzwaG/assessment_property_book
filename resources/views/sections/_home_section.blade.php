@@ -10,7 +10,7 @@
                         <h2>{{ $home_bannah->description }}</h2>
                         <div class="d-flex justify-content-center justify-content-lg-start">
                             <a href="#about" class="btn-get-started scrollto" style="font-weight:600">Get Started</a>
-                            <a href="#" class="glightbox btn-watch-video">
+                            <a href="https://www.youtube.com/watch?v=O0hJtYJcC-k" class="glightbox btn-watch-video">
                                 <img src="{{ asset('file-image/icons8-play-button-circled-100.png') }}"
                                     style="height: 50px; padding-right: 10px" alt="">
                                 <span>Watch Video</span></a>
