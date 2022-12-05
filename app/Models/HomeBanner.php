@@ -21,7 +21,7 @@ class HomeBanner extends Model
         'updated_at',
     ];
 
-    public function  banner_vedio(){
+    public function  banner_images(){
         return $this->hasOne(BannerVedio::class);
     }
 

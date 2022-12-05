@@ -14,10 +14,12 @@ class FooterController extends Controller
      */
     public function index()
     {
-        
+        $footers = Footer::all();
+
+        return view('one-ui-admin.layouts.footer')->with('footers', $footers);
     }
 
-   
+
     public function create()
     {
         //
@@ -31,7 +33,14 @@ class FooterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $footer = new Footer;
+
+        $footer->title = $request->input('title');
+        $footer->description = $request->input('description');
+
+        $footer->save();
+
+        return redirect('/footers')->with('status', 'Added New Footer');
     }
 
     /**

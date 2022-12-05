@@ -14,7 +14,11 @@ class StoryPhotoController extends Controller
      */
     public function index()
     {
-        //
+        $storyPhotos = StoryPhoto::all();
+
+        return view('one-ui-admin.layouts.storyphoto')->with(
+            'storyphotos', $storyPhotos
+        );
     }
 
     /**

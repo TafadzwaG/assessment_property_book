@@ -14,7 +14,11 @@ class OurStoryController extends Controller
      */
     public function index()
     {
-        //
+        $ourStory = OurStory::all();
+
+        return view('one-ui-admin.layouts.ourstory')->with(
+            'ourstories', $ourStory
+        );
     }
 
     /**

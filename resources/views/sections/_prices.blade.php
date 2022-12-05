@@ -14,7 +14,6 @@
                             <div class="card-body">
                                 <div class="text-center p-3">
                                     <h5 class="card-title">{{ $price->type }}</h5>
-                                    <small>Individual</small>
                                     <br><br>
                                     <span class="h2">${{ $price->price }}</span>/month
                                     <br><br>

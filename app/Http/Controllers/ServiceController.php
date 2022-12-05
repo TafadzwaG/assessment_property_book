@@ -14,9 +14,9 @@ class ServiceController extends Controller
      */
     public function index()
     {
-        $services = Service::get();
+        $services = Service::all();
 
-        return $services;
+        return view('one-ui-admin.layouts.services')->with('services', $services);
     }
 
     /**
@@ -37,22 +37,34 @@ class ServiceController extends Controller
      */
     public function store(Request $request)
     {
-        $service_data = $request->validate([
+        // $service_data = $request->validate([
+        //     'title' => 'required|string',
+        //     'description' => 'required|string',
+        //     'icon' => 'nullable|image:png:jpeg:jpg:gif'
+
+        // ]);
+
+        $this->validate($request, [
             'title' => 'required|string',
             'description' => 'required|string',
             'icon' => 'nullable|image:png:jpeg:jpg:gif'
-
         ]);
 
-        if ($request->has('icon')) {
-            $imageName = time() . "update_image" . "." . $request->photo->getClientOriginalExtension();
-            $request->image->move(public_path('images'), $imageName);
-            $data["image"] = $imageName;
-        }
+        $icon_path = $request->file('icon')->store('icon', 'public');
 
-        $service = Service::create($service_data);
+        $data = Service::create([
+            'icon' =>  $icon_path,
+        ]);
+    
+        // if ($request->has('icon')) {
+        //     $imageName = time() . "update_image" . "." . $request->photo->getClientOriginalExtension();
+        //     $request->image->move(public_path('images'), $imageName);
+        //     $data["image"] = $imageName;
+        // }
 
-        return new Service($service);
+        // $service = Service::create($service_data);
+
+        return redirect('/services')->with('status', 'Added New Service');
     }
 
     /**

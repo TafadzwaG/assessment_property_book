@@ -63,9 +63,10 @@ class PriceController extends AdminController
      */
     protected function form()
     {
+
         $form = new Form(new Price());
 
-        $form->text('type', __('Type'))->default('Starter');
+        $form->radio('type', __('Type'))->options(['starter' =>'Starter',  'exclusive' => 'Exclusive', 'premium' => 'Premium'])    ->default('Starter');
         $form->textarea('description', __('Description'));
         $form->decimal('price', __('Price'));
 

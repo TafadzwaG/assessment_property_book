@@ -5,7 +5,9 @@
     <header id="header" class="fixed-top ">
         <div class="container d-flex align-items-center">
 
-            <h1 class="logo me-auto"><a href="index.html">GASHIRA</a></h1>
+            <h1 class="logo me-auto">
+                <img src="{{ asset('file-image/icons8-checkmark-480.png')}}" style="height: 100px" alt="">
+                <a href="/" style="font-weight: 900">Business</a></h1>
 
             <nav id="navbar" class="navbar">
                 <ul>

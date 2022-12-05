@@ -3,6 +3,7 @@
 namespace App\Admin\Controllers;
 
 use App\Models\BannerVedio;
+use App\Models\HomeBanner;
 use Encore\Admin\Controllers\AdminController;
 use Encore\Admin\Form;
 use Encore\Admin\Grid;
@@ -64,10 +65,11 @@ class BannerVedioController extends AdminController
     protected function form()
     {
         $form = new Form(new BannerVedio());
-
+        
+        $form->select('home_banner_id', __('Home banner id'))->options(HomeBanner::all()->pluck('title', 'id'));;
         $form->text('title', __('Title'));
-        $form->text('path', __('Path'));
-        $form->number('home_banner_id', __('Home banner id'));
+        $form->image('path', __('Path'));
+
 
         return $form;
     }

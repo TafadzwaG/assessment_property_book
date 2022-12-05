@@ -1,0 +1,100 @@
+@extends('one-ui-admin.master')
+
+@section('content')
+    <div class="panel-header panel-header-sm"></div>
+    <div class="content">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h4 class="card-title" style="display: flex; justify-content:space-between">Footers
+                            <button type="button" class="btn btn-primary float-right" data-toggle="modal"
+                                data-target="#exampleModal">+ New</button>
+
+                        </h4>
+
+                    </div>
+                    @if (session('status'))
+                        <div class="alert alert-success" role="alert">
+                            {{ session('status')}}
+                        </div>
+                    @endif
+
+                    {{-- Modal --}}
+                    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog"
+                        aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="exampleModalLabel">New Footer</h5>
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border: none; border-radius:  50%">
+                                        <span aria-hidden="true">&times;</span>
+                                    </button>
+
+                                   
+                                </div>
+                                <form action="/save_footer" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="modal-body">
+
+                                        <div class="form-group">
+                                            <label for="title" class="col-form-label">Title:</label>
+                                            <input type="text" name="title" class="form-control" id="title">
+                                        </div>
+                                        
+                                        <div class="form-group">
+                                            <label for="description" class="col-form-label">Description:</label>
+                                            <textarea class="form-control" name="description" id="description"></textarea>
+                                        </div>
+
+                                    </div>
+                                    <div class="modal-footer" style="border: none">
+                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                        <button type="submit" class="btn btn-primary">Save</button>
+                                    </div>
+                                </form>
+                                
+                            </div>
+                        </div>
+                    </div>
+                    {{-- Modal End --}}
+                    <div class="card-body">
+                        <div class="table-responsive">
+                            @if ($footers->count() > 0)
+                                <table class="table">
+                                    <thead class="text-primary">
+                                        <th>Id</th>
+                                        <th>Title</th>
+                                        <th>Description</th>
+                                        <th>Edit</th>
+                                        <th>Delete</th>
+                                    </thead>
+                                    <tbody>
+                                        @foreach ($footers as $footer)
+                                            <tr>
+                                                <td>{{ $footer->id }}</td>
+                                                <td>{{ $footer->title }}</td>
+                                                <td>{{ $footer->description }}</td>
+                                                <td>
+                                                    <a href="#" class="btn btn-success">Edit</a>
+                                                </td>
+                                                <td> <a href="#" class="btn btn-danger">Delete</a></td>
+                                            </tr>
+                                        @endforeach
+
+
+                                    </tbody>
+                                </table>
+                            @else
+                                <h4 class="card-title">No Footers Available</h4>
+                            @endif
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+@endsection

@@ -14,8 +14,12 @@ class PriceController extends Controller
      */
     public function index()
     {
-        //
-    }
+        $prices  = Price::all();
+
+        return view('one-ui-admin.layouts.price')->with(
+            'prices', $prices
+        );
+    } 
 
     /**
      * Show the form for creating a new resource.

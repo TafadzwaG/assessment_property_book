@@ -14,7 +14,11 @@ class TagController extends Controller
      */
     public function index()
     {
-        //
+        $tags = Tag::all();
+
+        return view('one-ui-admin.layouts.tag')->with(
+            'tags', $tags
+        );
     }
 
     /**

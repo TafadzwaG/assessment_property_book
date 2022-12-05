@@ -15,7 +15,11 @@ class HomeBannerController extends Controller
     public function index()
     {
 
+        $homeBanner = HomeBanner::all();
         
+        return view('one-ui-admin.layouts.homebanner')->with(
+            'homebanners' , $homeBanner
+        );
 
     }
 
