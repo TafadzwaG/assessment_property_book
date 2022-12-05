@@ -16,8 +16,15 @@ php artisan vendor:publish --provider="Encore\Admin\AdminServiceProvider"
 
 php artisan admin:install
 
+
+
 #### Admin URL
 http://localhost/admin/
+
+Admin Username: admin
+Admin Password: admin
+
+## NB: Make Sure there a successful admin migration
 
 ### Details 
 All the data is from the database so run the above commands
@@ -33,4 +40,18 @@ All the data is from the database so run the above commands
 - http://127.0.0.1:8000/admin/our-stories
 - http://127.0.0.1:8000/admin/story-photos
 - http://127.0.0.1:8000/admin/home-banners
+
+
+### Relationships
+
+- Price hasMany Tags
+- HomeBanner hasOne Bannervedio
+- OurStory hasMany StoryPhotos
+
+
+### Details
+This project depends on the database so the first step is to make sure the admin is working
+by running the above commands
+
+
 
