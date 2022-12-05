@@ -58,5 +58,5 @@ by running the above commands
 - The pricing cards have tags those with ticks so first you have to create 
 a price the create a tag of the price and you can have as many tags
 - Images used can be found in the public folder
-
+- The BannerVedio model was supposed to be for video upload but i have changed it to image upload in the admin without changing the name of the model (there is a spelling error)
 
