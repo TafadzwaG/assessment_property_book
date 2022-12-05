@@ -57,6 +57,6 @@ by running the above commands
 - And the story images are also on the carousel
 - The pricing cards have tags those with ticks so first you have to create 
 a price the create a tag of the price and you can have as many tags
-
+- Images used can be found in the public folder
 
 
