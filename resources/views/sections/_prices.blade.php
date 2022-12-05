@@ -39,6 +39,8 @@
                         </div>
                     </div>
                 @endforeach
+                @else
+         <h1>No Pricing Available in the database</h1>
 
             @endif
 

@@ -77,6 +77,8 @@
                      </div>
          </div>
          @endforeach
+     @else
+         <h1>No Stories Available in the database</h1>
 
 
          @endif

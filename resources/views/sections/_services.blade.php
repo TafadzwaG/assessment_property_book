@@ -29,6 +29,8 @@
                      </div>
                  @endforeach
 
+            @else
+                     <h1>No services Available in the database</h1>
              @endif
 
 
