@@ -50,9 +50,11 @@ All the data is from the database so run the above commands
 
 
 ### Details
-This project depends on the database so the first step is to make sure the admin is working
+- This project depends on the database so the first step is to make sure the admin is working
 by running the above commands
-The icons are images which can be found in the (public/icons) folder
+- The icons are images which can be found in the (public/icons) folder
+- The footer is also dynamic with a owl carousel
+- And the story images are also on the carousel
 
 
 
