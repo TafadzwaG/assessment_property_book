@@ -16,3 +16,15 @@ http://localhost/admin/
 ### Details 
 All the data is from the database so run the above commands
 
+
+## Admin Routes 
+
+- http://127.0.0.1:8000/admin/services
+- http://127.0.0.1:8000/admin/footers
+- http://127.0.0.1:8000/admin/prices
+- http://127.0.0.1:8000/admin/tags
+- http://127.0.0.1:8000/admin/banner-vedios
+- http://127.0.0.1:8000/admin/our-stories
+- http://127.0.0.1:8000/admin/story-photos
+- http://127.0.0.1:8000/admin/home-banners
+
