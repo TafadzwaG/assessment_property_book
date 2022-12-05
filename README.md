@@ -52,6 +52,7 @@ All the data is from the database so run the above commands
 ### Details
 This project depends on the database so the first step is to make sure the admin is working
 by running the above commands
+The icons are images which can be found in the (public/icons) folder
 
 
 
