@@ -60,3 +60,18 @@ a price the create a tag of the price and you can have as many tags
 - Images used can be found in the public folder
 - The BannerVedio model was supposed to be for video upload but i have changed it to image upload in the admin without changing the name of the model (there is a spelling error)
 
+
+
+## One UI Dashboard 
+There is also another dashboard of one ui 
+- it provide thes listing if everything in the databse without the ability to add edit or delete 
+- There is no need for auth to this dashboard 
+
+### Navigation to one Ui dashboard 
+
+http://127.0.0.1:8000/dashboard
+
+- Only the Add footer is working on this dashboard 
+
+- 
+
