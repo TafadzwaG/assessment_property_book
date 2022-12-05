@@ -55,6 +55,8 @@ by running the above commands
 - The icons are images which can be found in the (public/icons) folder
 - The footer is also dynamic with a owl carousel
 - And the story images are also on the carousel
+- The pricing cards have tags those with ticks so first you have to create 
+a price the create a tag of the price and you can have as many tags
 
 
 
