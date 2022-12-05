@@ -66,6 +66,7 @@ a price the create a tag of the price and you can have as many tags
 There is also another dashboard of one ui 
 - it provide thes listing if everything in the databse without the ability to add edit or delete 
 - There is no need for auth to this dashboard 
+- This dashboard was created using the One UI template
 
 ### Navigation to one Ui dashboard 
 
